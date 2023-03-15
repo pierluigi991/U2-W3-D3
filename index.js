@@ -18,9 +18,21 @@ fetch(URL)
          <p class="card-text fw-bold">${book.price}</p>
          <p class="card-text fw-semibold">${book.category}</p>
          <a href="#" id="del-button" class="btn btn-primary">Scarta</a>
+         <a href="#" id="car-button" class="btn btn-primary">Aggiungi</a>
+         <a href="#" id="rem-button" class="btn btn-primary">rimuovi</a>
             </div>
-        </div>
-            `;
+        </div> `;
+      const scarta = col.querySelector("#del-button");
+      scarta.onclick = () => {
+        col.remove();
+      };
+
+      const btnCar = col.querySelector("#car-button");
+      btnCar.onclick = () => {
+        const carrello = document.querySelector("#cart");
+        carrello.appendChild(col);
+      };
+
       grid.appendChild(col);
     });
   })
